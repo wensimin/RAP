@@ -109,6 +109,12 @@
 		</listener-class>
 	</listener>
 
+	<locale-encoding-mapping-list>
+	        <locale-encoding-mapping>
+	            <locale>zh</locale>
+	            <encoding>UTF-8</encoding>
+	        </locale-encoding-mapping>
+	</locale-encoding-mapping-list>
 	<session-config>
 		<session-timeout>60</session-timeout>
 	</session-config>

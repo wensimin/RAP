@@ -592,7 +592,6 @@
                 }]
             }];
         }
-
         ws.init(data, urlObj#if($actionId),$actionId#end, callbackHandler);
         $('#div-control-panel').show();
         $('#div-add-p-mt-list-container').show()
