@@ -2233,6 +2233,7 @@ function deepCopy(o) {
         action.requestUrl = b.g("editAFloater-requestUrl").value;
         action.responseTemplate = b.g("editAFloater-responseTemplate").value;
         action.description = b.g("editAFloater-description").value;
+        action.user = p.getData().user;
         var struct = getSelectedValue("editAFloater-struct");
         setActionStruct(action, struct);
 
