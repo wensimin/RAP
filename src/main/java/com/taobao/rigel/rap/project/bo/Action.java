@@ -1,5 +1,6 @@
 package com.taobao.rigel.rap.project.bo;
 
+import com.google.gson.JsonObject;
 import com.taobao.rigel.rap.account.bo.User;
 import com.taobao.rigel.rap.common.utils.StringUtils;
 
@@ -18,7 +19,9 @@ public class Action implements java.io.Serializable {
 	private String responseTemplate;
 	private Set<Page> pageList = new HashSet<Page>();
 	private String remarks;
-
+	private String userId;
+	private User user;
+	
 	public static List<Action> loadList(List<Map<String, Object>> result) {
 		List<Action> list = new ArrayList<Action>();
 		for (Map<String, Object> row : result) {
@@ -29,6 +32,7 @@ public class Action implements java.io.Serializable {
 			obj.setRemarks((String) row.get("remarks"));
 			obj.setRequestType((String) row.get("request_type"));
 			obj.setRequestUrl((String) row.get("request_url"));
+			obj.setUserId((String) row.get("user_id"));
 			list.add(obj);
 		}
 		return list;
@@ -74,6 +78,38 @@ public class Action implements java.io.Serializable {
 		if (requestType == null || requestType == "")
 			return;
 		this.requestType = requestType;
+	}
+
+	/**
+	 * 获取userId
+	 * @return userId
+	 */
+	public String getUserId() {
+		return userId;
+	}
+
+	/**
+	 * 设置userId
+	 * @param userId the userId to set
+	 */
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	/**
+	 * 获取user
+	 * @return user
+	 */
+	public User getUser() {
+		return user;
+	}
+
+	/**
+	 * 设置user
+	 * @param user the user to set
+	 */
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public String getMethod() {
@@ -160,6 +196,8 @@ public class Action implements java.io.Serializable {
 		setRequestType(action.getRequestType());
 		setRequestUrl(action.getRequestUrl());
 		setResponseTemplate(action.getResponseTemplate());
+		setUserId(action.getUserId());
+		setUser(action.getUser());
 	}
 
 	public String toString() {
@@ -171,6 +209,8 @@ public class Action implements java.io.Serializable {
 		stringBuilder.append("\"requestType\":\"" + getRequestType() + "\",");
 		stringBuilder.append("\"requestUrl\":\"" + StringUtils.escapeInJ(getRequestUrl()) + "\",");
 		stringBuilder.append("\"responseTemplate\":\"" + StringUtils.escapeInJ(getResponseTemplate()) + "\",");
+		stringBuilder.append("\"userId\":\"" + StringUtils.escapeInJ(getUserId()) + "\",");
+		stringBuilder.append("\"user\":" + getUser().toString() + ",");
 		stringBuilder.append("\"requestParameterList\":");
 
 		stringBuilder.append("[");

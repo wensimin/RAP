@@ -244,7 +244,7 @@ CREATE TABLE tb_action
   COMMENT '请求类型get/post/put/delete等等 request type'
     DEFAULT 1, /** request_type = 99, mount type **/
   request_url       TEXT                   NULL,
-
+  user_id           INT(10) 			   NULL,
   disable_cache     TINYINT                NOT NULL
   COMMENT '禁用Mock缓存 disable mock cache'
     DEFAULT 0,

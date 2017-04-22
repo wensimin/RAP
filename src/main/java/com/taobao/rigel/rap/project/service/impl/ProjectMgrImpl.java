@@ -239,7 +239,13 @@ public class ProjectMgrImpl implements ProjectMgr {
     public String updateProject(int id, String projectData,
                                 String deletedObjectListData, Map<Integer, Integer> actionIdMap) {
         clearProjectDocCache(id);
-        return projectDao.updateProject(id, projectData, deletedObjectListData, actionIdMap);
+        try {
+        	return projectDao.updateProject(id, projectData, deletedObjectListData, actionIdMap);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+       
     }
 
 
