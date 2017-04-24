@@ -4056,7 +4056,7 @@ function deepCopy(o) {
             if (a.requestUrl) {
                 body += "<div class='item'><b>请求Url </b><font color='blue'> " + a.requestUrl + "</font></div>";
             }
-            if (a.user.name) {
+            if (a.user) {
                 body += "<div class='item'><b>负责人</b><font color='orange'>" + a.user.name + "</font></div>";
             }
             if (a.responseTemplate) {

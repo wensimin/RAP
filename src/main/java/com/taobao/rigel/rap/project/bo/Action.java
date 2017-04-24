@@ -210,7 +210,7 @@ public class Action implements java.io.Serializable {
 		stringBuilder.append("\"requestUrl\":\"" + StringUtils.escapeInJ(getRequestUrl()) + "\",");
 		stringBuilder.append("\"responseTemplate\":\"" + StringUtils.escapeInJ(getResponseTemplate()) + "\",");
 		stringBuilder.append("\"userId\":\"" + StringUtils.escapeInJ(getUserId()) + "\",");
-		stringBuilder.append("\"user\":" + getUser().toString() + ",");
+		stringBuilder.append("\"user\":" + getUser() + ",");
 		stringBuilder.append("\"requestParameterList\":");
 
 		stringBuilder.append("[");
